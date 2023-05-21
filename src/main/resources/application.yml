@@ -3,7 +3,7 @@ server:
 
 mqtt:
   clientId: clientId
-  topic: mqtt_topic
+  topic: watering
   broker:
     url: tcp://rpi3a:1883
     username: rpi3a
