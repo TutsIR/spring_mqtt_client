@@ -2,10 +2,7 @@ package com.example.spring_mqtt_client.controller;
 
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.spring_mqtt_client.service.MqttService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -13,6 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.RequiredArgsConstructor;
 import model.MessageDto;
+import model.NeedsWaterDto;
 
 @RestController
 @RequestMapping("/mqtt")
@@ -32,5 +30,10 @@ public class MqttController {
 
     String messageString = objectMapper.writeValueAsString(message);
     mqttService.publish(topic, messageString);
+  }
+
+  @GetMapping("/needs-water")
+  public boolean getWateringStatus() {
+    return mqttService.needsWater;
   }
 }

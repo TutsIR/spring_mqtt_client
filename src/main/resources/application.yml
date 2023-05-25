@@ -2,10 +2,10 @@ server:
   port: 8083
 
 mqtt:
-  clientId: clientId
+  clientId: clientId_23456
   topic: watering
   broker:
-    url: tcp://rpi3a:1883
+    url: tcp://192.168.43.173:1883
     username: rpi3a
     password: mypassword
 

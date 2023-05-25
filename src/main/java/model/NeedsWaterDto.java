@@ -2,16 +2,14 @@ package model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class MessageDto {
+public class NeedsWaterDto {
 
-  @JsonProperty("gpio_pin")
-  private int gpioPin;
+    @JsonProperty("needs_water")
+    private boolean needsWater;
 
-  private boolean activated;
 }
